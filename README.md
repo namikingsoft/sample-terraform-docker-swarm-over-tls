@@ -1,6 +1,6 @@
 Build docker swarm cluster using Terraform
 ==============================
-This is sample that build docker swarm cluster using Terraform on DigitalOcean.
+This is sample build docker swarm cluster with TLS using Terraform on DigitalOcean.
 
 Refs: [TLS認証なDocker Swarmクラスタを構築 (docker-machineなしで)](http://blog.namiking.net/post/2015/09/docker-swarm-build-using-tls/)
 
