@@ -1,0 +1,4 @@
+do_token=""
+pub_key="~/.ssh/id_rsa.pub"
+pvt_key="~/.ssh/id_rsa"
+ssh_fingerprint="(copy and paste: ssh-keygen -lf ~/.ssh/id_rsa.pub)"
