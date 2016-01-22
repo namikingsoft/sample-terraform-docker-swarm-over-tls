@@ -20,7 +20,7 @@ terraform apply
 ```
 it output tls keys to `keys` directory.
 
-#### e.g.
+#### e.g. docker usage
 ```sh
 docker --tlsverify \
   --tlscacert=keys/ca.pem \
