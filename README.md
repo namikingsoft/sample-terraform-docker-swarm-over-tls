@@ -18,6 +18,26 @@ vi terraform.tfvars
 terraform plan
 terraform apply
 ```
+it output tls keys to `keys` directory.
+
+#### e.g.
+```sh
+docker --tlsverify \
+  --tlscacert=keys/ca.pem \
+  --tlscert=keys/cert.pem \
+  --tlskey=keys/key.pem \
+  -H=(ipv4_address of first host):3376 \
+  info
+```
+or
+```sh
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_CERT_PATH="/path/to/keys"
+export DOCKER_HOST="(ipv4_address of first host):3376"
+
+docker info
+```
+
 
 License
 ------------------------------
