@@ -20,10 +20,16 @@ service docker restart
 
 # swarm manager
 if [ "$ID" = "0" ]; then
-  docker run -d --name swarm-agent-master -v /etc/docker:/etc/docker --net host \
-    swarm manage --tlsverify --tlscacert=/etc/docker/ca.pem --tlscert=/etc/docker/server-cert.pem --tlskey=/etc/docker/server-key.pem -H tcp://0.0.0.0:3376 --strategy spread --advertise ${IP}:2376 consul://localhost:8500
+  docker run -d --name=swarm-agent-master \
+    -v=/etc/docker:/etc/docker --net=host --restart=always \
+    swarm manage --tlsverify \
+      --tlscacert=/etc/docker/ca.pem \
+      --tlscert=/etc/docker/server-cert.pem \
+      --tlskey=/etc/docker/server-key.pem \
+      -H=0.0.0.0:3376 --strategy=spread \
+      --advertise=${IP}:2376 consul://localhost:8500
 fi
 
 # swarm agent
-docker run -d --name swarm-agent --net host \
-  swarm join --advertise ${IP}:2376 consul://localhost:8500
+docker run -d --name=swarm-agent --net=host --restart=always \
+  swarm join --advertise=${IP}:2376 consul://localhost:8500
