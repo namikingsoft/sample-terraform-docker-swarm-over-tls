@@ -1,4 +1,4 @@
-Build docker swarm cluster using Terraform
+Build docker swarm over TLS using Terraform
 ==============================
 This is sample build docker swarm cluster over TLS using Terraform on DigitalOcean.
 
