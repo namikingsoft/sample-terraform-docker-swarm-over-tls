@@ -1,3 +1,5 @@
+#!/bin/bash -e
+
 # workdir
 mkdir keys && true
 cd keys

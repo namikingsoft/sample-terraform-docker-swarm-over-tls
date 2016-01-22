@@ -1,3 +1,5 @@
+#!/bin/bash -e
+
 # arguments
 IP=$1
 
